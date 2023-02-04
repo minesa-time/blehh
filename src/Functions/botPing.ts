@@ -8,5 +8,5 @@ const client = new Client({ intents: "GuildMessages" });
  */
 
 export async function botPing() {
-	return client.ws.ping;
+    return client.ws.ping;
 }
