@@ -1,4 +1,4 @@
-import { Client, ClientOptions } from "discord.js";
+import { Client, ClientOptions, Events } from "discord.js";
 import { config } from "dotenv";
 
 config();
@@ -18,5 +18,14 @@ export class NeoJS extends Client {
     public onReady(message: string = "Client is ready!"): void {
         this.login(process.env.TOKEN);
         console.log(`${message}`);
+    }
+
+    // This is the function that has name and code property, when the event is triggered, the code will be executed
+    public onMessage(name: string, code: Function): void {
+        this.on("messageCreate", (message) => {
+            if (message.content === name) {
+                code(message);
+            }
+        });
     }
 }
