@@ -5,6 +5,7 @@ config();
 
 // This is the class that will be exported for use in other files
 export class NeoJS extends Client {
+    db: any;
     constructor(options?: ClientOptions) {
         super(options!);
     }
@@ -23,7 +24,7 @@ export class NeoJS extends Client {
             console.error(`An error occurred while logging in: ${error}`);
         }
     }
-    
+
 
     // This is the function that has name and code property, when the event is triggered, the code will be executed
     public onMessage(name: string, code: Function): void {
