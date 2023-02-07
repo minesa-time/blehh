@@ -4,7 +4,7 @@ import { config } from "dotenv";
 config();
 
 // This is the class that will be exported for use in other files
-export class NeoJS extends Client {
+export class Blehh extends Client {
     db: any;
     constructor(options?: ClientOptions) {
         super(options!);
