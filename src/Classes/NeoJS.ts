@@ -16,9 +16,14 @@ export class NeoJS extends Client {
      */
     // This is the function that will be called when the client is ready
     public onReady(message: string = "Client is ready!"): void {
-        this.login(process.env.TOKEN);
-        console.log(`${message}`);
+        try {
+            this.login(process.env.TOKEN);
+            console.log(`${message}`);
+        } catch (error) {
+            console.error(`An error occurred while logging in: ${error}`);
+        }
     }
+    
 
     // This is the function that has name and code property, when the event is triggered, the code will be executed
     public onMessage(name: string, code: Function): void {
