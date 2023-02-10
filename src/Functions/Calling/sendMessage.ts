@@ -1,20 +1,26 @@
+// Importing required modules
 import { client } from "../../index.js";
 import { Message } from "discord.js";
+import { ChannelType } from "discord.js";
 
 /**
- * 
+ *
  * @param channelId The id of the channel to send the message to.
  * @param content The content of the message.
  * @param returnId If set to true, returns the message id after sending the message.
  * @returns The message id or a confirmation message.
  */
 
-async function sendMessage(channelId: string, content: string, returnId?: boolean) {
+async function sendMessage(
+    channelId: string,
+    content: string,
+    returnId?: boolean,
+) {
     let channel = client.channels.cache.get(channelId);
     if (!channel) {
         return "Channel not found.";
     }
-    if (channel.type !== "text") {
+    if (channel.type !== ChannelType.GuildText) {
         return "Invalid channel type. Please provide a text channel id.";
     }
 
