@@ -1,8 +1,7 @@
 // Importing modules
 import { GatewayIntentBits } from "discord.js";
-import { Blehh, ping, SlashCommand } from "./index.js";
+import { Blehh, ping } from "./index.js";
 
-// Creating a new instance of Blehh
 export const client = new Blehh({
     intents: [
         GatewayIntentBits.GuildMessages,
@@ -11,14 +10,12 @@ export const client = new Blehh({
     ],
 });
 
-// Adding a method to the instance, this method will be called when the bot is ready.
 client.onReady("Bot is ready!");
 
-// New command example
-new SlashCommand({
-    name: "ping",
-    type: "CHAT_INPUT",
-    run: async ({ interaction }) => {
-        await interaction.reply(`Hello World!`);
-    },
+client.onMessage("!ping", async (message: any) => {
+    const clientPing = await ping("client");
+
+    message.reply(`Client ping: ${clientPing}ms!`);
 });
+
+

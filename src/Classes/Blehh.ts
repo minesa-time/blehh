@@ -28,7 +28,7 @@ export class Blehh extends Client {
 
     // This is the function that has name and code property, when the event is triggered, the code will be executed
     public onMessage(name: string, code: Function): void {
-        this.on("messageCreate", (message) => {
+        this.on(Events.MessageCreate, (message) => {
             if (message.content === name) {
                 code(message);
             }
