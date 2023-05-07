@@ -8,7 +8,7 @@ import { client } from "../../index.js";
  * @returns The URL of the user's avatar.
  */
 
-async function avatar(
+export async function avatar(
     userID: string,
     size?: 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 2048 | 4096,
 ) {
@@ -23,6 +23,3 @@ async function avatar(
 
     return avatarURL;
 }
-
-// Exporting avatar function.
-export { avatar };

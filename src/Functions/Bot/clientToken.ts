@@ -1,5 +1,5 @@
 import { client } from "../../index.js";
 
-export function botToken() {
+export function clientToken() {
     return client.token;
 }

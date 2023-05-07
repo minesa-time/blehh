@@ -1,5 +1,5 @@
 import { client } from "../../index.js";
 
-export function botId() {
+export function clientId() {
     return client.user?.id;
 }
