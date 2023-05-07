@@ -1,13 +1,6 @@
-import {
-    GatewayIntentBits,
-    IntentsBitField,
-    ActivityFlags,
-    ActivityType,
-    PermissionsBitField,
-    Events,
-} from "discord.js";
+import { GatewayIntentBits, } from "discord.js";
 
-enum ButtonStyleOptions {
+export enum ButtonStyleOptions {
     Primary = 1,
     Secondary = 2,
     Success = 3,
@@ -15,7 +8,7 @@ enum ButtonStyleOptions {
     Link = 5,
 }
 
-enum CacheOptions {
+export enum CacheOptions {
     Guilds = "GuildManager",
     Messages = "MessageManager",
     Channels = "ChannelManager",
@@ -42,7 +35,7 @@ enum CacheOptions {
     GuildStickers = "GuildStickerManager",
 }
 
-enum SlashOptionTypes {
+export enum SlashOptionTypes {
     SubCommand = 1,
     SubGroup = 2,
     String = 3,
@@ -53,4 +46,23 @@ enum SlashOptionTypes {
     Role = 8,
     Mentionable = 9,
     Number = 10,
+}
+
+export enum Intents {
+    Guilds = GatewayIntentBits.Guilds,
+    GuildMembers = GatewayIntentBits.GuildMembers,
+    GuildModeration = GatewayIntentBits.GuildModeration,
+    GuildEmojisAndStickers = GatewayIntentBits.GuildEmojisAndStickers,
+    GuildInvites = GatewayIntentBits.GuildInvites,
+    GuildVoiceStates = GatewayIntentBits.GuildVoiceStates,
+    GuildPresences = GatewayIntentBits.GuildPresences,
+    GuildMessages = GatewayIntentBits.GuildMessages,
+    GuildMessageReactions = GatewayIntentBits.GuildMessageReactions,
+    GuildMessageTyping = GatewayIntentBits.GuildMessageTyping,
+    DirectMessages = GatewayIntentBits.DirectMessages,
+    DirectMessageReactions = GatewayIntentBits.DirectMessageReactions,
+    DirectMessageTyping = GatewayIntentBits.DirectMessageTyping,
+
+    AutoModerationConfiguration = GatewayIntentBits.AutoModerationConfiguration,
+    MessageContent = GatewayIntentBits.MessageContent,
 }

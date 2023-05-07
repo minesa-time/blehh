@@ -1,13 +1,20 @@
-import { Client, ClientOptions, Events } from "discord.js";
+import { Client, ClientOptions, Events, GatewayIntentBits } from "discord.js";
 import { config } from "dotenv";
 
 config();
 
 // This is the class that will be exported for use in other files
 export class Blehh extends Client {
-    db: any;
-    constructor(options?: ClientOptions) {
-        super(options!);
+    /**
+     * Constructor
+     * @description This is the constructor for the Blehh class
+     * @param options The options for the client
+     * @returns The client
+     */
+
+    // Adding intents and constructor
+    public constructor(options: ClientOptions) {
+        super(options);
     }
 
     /**

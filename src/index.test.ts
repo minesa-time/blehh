@@ -1,14 +1,7 @@
-// Importing modules
-import { GatewayIntentBits } from "discord.js";
+import { Intents } from "./Utils/util.js";
 import { Blehh, ping } from "./index.js";
 
-export const client = new Blehh({
-    intents: [
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.MessageContent,
-    ],
-});
+export const client = new Blehh({ intents: [Intents.Guilds, Intents.GuildMessages, Intents.MessageContent] });
 
 client.onReady("Bot is ready!");
 
@@ -17,5 +10,3 @@ client.onMessage("!ping", async (message: any) => {
 
     message.reply(`Client ping: ${clientPing}ms!`);
 });
-
-
