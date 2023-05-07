@@ -1,5 +1,5 @@
-import { Intents } from "./Utils/util.js";
-import { Blehh, clientDestroy } from "./index.js";
+import { Intents } from "./Interfaces/util.js";
+import { Blehh } from "./index.js";
 
 export const client = new Blehh({
     intents: [Intents.Guilds, Intents.GuildMessages, Intents.MessageContent],
@@ -7,6 +7,6 @@ export const client = new Blehh({
 
 client.onReady("Bot is ready!");
 
-client.onMessage("!ping", async () => {
-    clientDestroy();
+client.onMessage("!ping", async (message: any) => {
+    await message.reply("Pong!");
 });

@@ -1,4 +1,4 @@
-import { Client, ClientOptions, Events, GatewayIntentBits } from "discord.js";
+import { Client, ClientOptions, Events, GatewayIntentBits, Message } from "discord.js";
 import { config } from "dotenv";
 
 config();
@@ -35,7 +35,7 @@ export class Blehh extends Client {
 
     // This is the function that has name and code property, when the event is triggered, the code will be executed
     public onMessage(name: string, code: Function): void {
-        this.on(Events.MessageCreate, (message) => {
+        this.on(Events.MessageCreate, (message: Message) => {
             if (message.content === name) {
                 code(message);
             }
