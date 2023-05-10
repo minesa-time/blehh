@@ -7,7 +7,7 @@ import { client } from "../../index.js";
  * @returns Shows bot's ping.
  */
 
-async function ping(typeOfPing: "client" | "database", shardId?: number): Promise<number> {
+async function ping(typeOfPing: "client", shardId?: number): Promise<number> {
     if (typeOfPing === "client") {
         if (shardId) {
             return client.ws.shards.get(shardId)?.ping as number;
@@ -15,7 +15,7 @@ async function ping(typeOfPing: "client" | "database", shardId?: number): Promis
             return client.ws.ping;
         }
     } else {
-        throw new Error("Invalid type of ping.");
+        throw new Error("Invalid type of ping. Please use “client” type.");
     }
 }
 
