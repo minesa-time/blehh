@@ -24,7 +24,7 @@ const client = new Blehh({
 client.onReady("Bot is ready!");
 
 // If user types “!ping” it calls ping function and returns ping
-client.onMessage("!ping", async (message: any) => {
+client.onMessage("!ping", async (message) => {
     await message.reply(`${ping()}ms!`);
 });
 ```
