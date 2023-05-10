@@ -3,3 +3,18 @@
     <h1 style="text-decoration: none;">Blehhh</h1>
     <p>blehhh, the discord framework.</p>
 </div>
+
+Setup example
+```js
+const {Blehh} = require("blehh");
+
+const client = new Blehh({
+    intents: [Intents.Guilds, Intents.GuildMessages, Intents.MessageContent],
+});
+
+client.onReady("Bot is ready!");
+
+client.onMessage("!ping", async (message: any) => {
+    await message.reply("Pong!");
+});
+```
