@@ -6,15 +6,23 @@
 
 Setup example
 ```js
-const {Blehh} = require("blehh");
+// Importing Blehh and ping 
+import { Blehh, ping } from "blehh";
 
+// Defining blehh
 const client = new Blehh({
-    intents: [Intents.Guilds, Intents.GuildMessages, Intents.MessageContent],
+    intents: [
+        Intents.Guilds,
+        Intents.GuildMessages,
+        Intents.MessageContent
+    ],
 });
 
+// When bot is ready, return this message on console
 client.onReady("Bot is ready!");
 
+// If user types “!ping” it calls ping function and returns ping
 client.onMessage("!ping", async (message: any) => {
-    await message.reply("Pong!");
+    await message.reply(`${ping()}ms!`);
 });
 ```
