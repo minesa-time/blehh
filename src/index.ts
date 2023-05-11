@@ -5,6 +5,7 @@ export { clientId } from "./Functions/Bot/clientId.js";
 export { clientToken } from "./Functions/Bot/clientToken.js";
 export { clientDestroy } from "./Functions/Bot/clientDestroy.js";
 export { avatar } from "./Functions/Info/avatar.js";
+export { messageId } from "./Functions/Message/messageId.js":
 
 // Classes
 export { Blehh } from "./Classes/Blehh.js";
