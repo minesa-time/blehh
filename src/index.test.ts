@@ -1,5 +1,5 @@
 import { Intents } from "./Interfaces/util.js";
-import { Blehh } from "./index.js";
+import { Blehh, getMessageId } from "./index.js";
 
 export const client = new Blehh({
     intents: [Intents.Guilds, Intents.GuildMessages, Intents.MessageContent],
@@ -7,6 +7,6 @@ export const client = new Blehh({
 
 client.onReady("Bot is ready!");
 
-client.onMessage("!ping", async (message: any) => {
-    await message.reply("Pong!");
+client.onMessage("!id", async (message: any) => {
+    await message.reply(`${getMessageId(message)}`);
 });
